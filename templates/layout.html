@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ForestScan — Tree-Level Change Dashboard</title>
+  <!-- Custom brand font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="/static/css/custom.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div class="min-h-screen flex">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white border-r hidden md:block">
+  <div class="p-4 text-xl font-semibold text-green-700"><span class="brand-title brand-title-lg">ForestScan</span></div>
+        <nav class="p-4">
+          <a class="block py-2 px-2 rounded hover:bg-green-50" href="/">Home</a>
+          <a class="block py-2 px-2 rounded hover:bg-green-50" href="/dashboard">Dashboard</a>
+          <a class="block py-2 px-2 rounded hover:bg-green-50" href="/about">About</a>
+        </nav>
+        <div class="p-4 text-sm text-gray-500">Green theme • NDVI & GLCM visualizer</div>
+      </aside>
+
+      <main class="flex-1">
+        <header class="bg-white border-b p-4 flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <button id="menu-toggle" class="md:hidden p-2 rounded bg-gray-100">Menu</button>
+            <div class="text-lg font-bold text-green-700">Tree-Level Change Detection</div>
+          </div>
+          <div class="w-1/2 max-w-xl relative">
+            <input id="searchBox" placeholder="Search District or Taluka (e.g. Ahmednagar | Akole)" class="w-full rounded p-2 border" autocomplete="off" />
+            <div id="suggestions" class="hidden"></div>
+          </div>
+        </header>
+
+        <section class="p-6">
+          {% block content %}{% endblock %}
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/js/search.js"></script>
+    <script src="/static/js/home_interact.js"></script>
+    <script src="/static/js/ui_interactions.js"></script>
+    <script>/* page-specific scripts can be added below */</script>
+  </body>
+</html>

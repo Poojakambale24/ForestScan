@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="col-span-2 bg-white p-4 rounded shadow">
+      <h2 class="text-xl font-semibold text-green-700">Global Map</h2>
+      <p class="text-sm text-gray-600">Interactive map showing taluka pins. Click a marker to open dashboard.</p>
+      <div id="map" class="mt-4 h-96 rounded relative">
+        <!-- Inline search overlay so suggestions appear above the map -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 top-4 z-40 w-11/12 max-w-2xl">
+          <input id="mapSearchBox" placeholder="Search District or Taluka (e.g. Ahmednagar | Akole)" class="w-full rounded p-2 border bg-white" autocomplete="off" />
+          <div id="mapSuggestions" class="hidden"></div>
+          <div class="mt-2 flex items-center gap-2 justify-end">
+            <label class="text-xs text-gray-600">Upload GeoJSON</label>
+            <input id="geoUpload" type="file" accept=".geojson,.json" class="text-xs" />
+            <div id="geoStatus" class="text-xs text-gray-500"></div>
+          </div>
+        </div>
+      </div>
+        <!-- Interactive image (user screenshot) -->
+        <div class="mt-4 p-2">
+          <h3 class="text-md font-semibold text-green-700">Area Snapshot</h3>
+          <p class="text-sm text-gray-600">Click the image to preview Taluka data and open dashboard.</p>
+          <div class="mt-2 relative">
+            <img id="homeSnapshot" src="/static/images/Screenshot.png" alt="snapshot" class="w-full max-h-64 object-cover rounded cursor-pointer shadow" />
+            <div id="snapshotBadge" class="absolute top-2 right-2 bg-white/80 px-2 py-1 rounded text-sm">Click to interact</div>
+          </div>
+        </div>
+    </div>
+
+    <div class="bg-white p-4 rounded shadow">
+      <h3 class="font-semibold text-green-700">Quick Search</h3>
+      <p class="text-sm text-gray-600">Type a taluka or district in the search box above. Select a suggestion to open the dashboard.</p>
+      <div class="mt-4">
+        <button id="open-dashboard" class="px-4 py-2 bg-green-600 text-white rounded">Open Dashboard</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/dashboard_map.js"></script>
+{% endblock %}

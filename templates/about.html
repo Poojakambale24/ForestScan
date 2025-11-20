@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="bg-white p-6 rounded shadow">
+    <h2 class="text-2xl font-semibold text-green-700">About this Project</h2>
+    <p class="mt-4 text-gray-700">This dashboard visualizes tree-level change detection results derived from satellite imagery.</p>
+    <ul class="list-disc pl-6 mt-3 text-gray-600">
+      <li>NDVI trends per Taluka</li>
+      <li>GLCM texture features to show structural changes</li>
+      <li>Automated zone classification by NDVI slope</li>
+    </ul>
+    <p class="mt-4 text-sm text-gray-500">Zone rules: Red (slope &lt; -0.02), Orange (-0.02 ≤ slope &lt; 0.01), Green (slope ≥ 0.01)</p>
+  </div>
+{% endblock %}

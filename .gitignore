@@ -1,0 +1,22 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+env/
+venv/
+*.sqlite3
+
+# IDE/editor
+.vscode/
+.idea/
+.DS_Store
+
+# data files (uncomment if you don't want to push large CSVs)
+# *.csv
+
+# mac/windows
+Thumbs.db
+
+# Node
+node_modules/

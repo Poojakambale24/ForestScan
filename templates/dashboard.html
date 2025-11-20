@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="col-span-2 bg-white p-4 rounded shadow">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl font-semibold text-green-700" id="title">Dashboard</h2>
+        <div id="zoneBadge" class="px-3 py-1 rounded text-white font-semibold">Zone</div>
+      </div>
+
+      <p id="zoneText" class="text-sm text-gray-600 mt-2">Zone explanation will appear here.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div class="p-4 bg-gray-50 rounded">
+          <h4 class="font-semibold text-green-600">NDVI over Years</h4>
+          <canvas id="ndviChart"></canvas>
+        </div>
+        <div class="p-4 bg-gray-50 rounded">
+          <h4 class="font-semibold text-green-600">GLCM Features</h4>
+          <canvas id="glcmChart"></canvas>
+        </div>
+      </div>
+
+      <div class="mt-4 p-4 bg-white rounded shadow">
+        <h4 class="font-semibold text-green-600">Cluster / PCA (2D)</h4>
+        <p class="text-sm text-gray-600">Simple 2D scatter of cluster IDs (year-based). If PCA available, it would be used; using cluster index vs year here for a quick view.</p>
+        <canvas id="clusterChart"></canvas>
+      </div>
+    </div>
+
+    <aside class="bg-white p-4 rounded shadow">
+      <h4 class="font-semibold text-green-700">Location</h4>
+      <div id="locationInfo" class="text-sm text-gray-700 mt-2"></div>
+      <div id="mapSmall" class="mt-4 h-48 rounded"></div>
+    </aside>
+  </div>
+
+  <script src="/static/js/dashboard.js"></script>
+{% endblock %}
