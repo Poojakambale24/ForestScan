@@ -45,3 +45,6 @@ Notes on authentication
 If you want, I can prepare a `.gitignore` and a small `requirements.txt` for you before pushing.
 
 https://github.com/Jadhav-Prathamesh-01
+<img width="1870" height="890" alt="Screenshot 2025-11-19 172720" src="https://github.com/user-attachments/assets/841ae32d-55fc-4a48-b841-5199ad906c0a" />
+
+
